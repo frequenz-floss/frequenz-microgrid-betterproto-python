@@ -81,7 +81,7 @@ dev-pytest = [
   "pytest == 8.0.0",
   "frequenz-repo-config[extra-lint-examples] == 0.9.2",
   "pytest-mock == 3.11.1",
-  "pytest-asyncio == 0.21.1",
+  "pytest-asyncio == 0.23.6",
 ]
 dev = [
   "frequenz-microgrid-betterproto[dev-mkdocs,dev-flake8,dev-formatting,dev-mkdocs,dev-mypy,dev-noxfile,dev-pylint,dev-pytest]",
