@@ -1468,18 +1468,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sample" class="md-nav__link">
+  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sampled_at" class="md-nav__link">
     <span class="md-ellipsis">
-      &nbsp;sample
+      &nbsp;sampled_at
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sampled_at" class="md-nav__link">
+  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.value" class="md-nav__link">
     <span class="md-ellipsis">
-      &nbsp;sampled_at
+      &nbsp;value
     </span>
   </a>
   
@@ -2387,18 +2387,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sample" class="md-nav__link">
+  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sampled_at" class="md-nav__link">
     <span class="md-ellipsis">
-      &nbsp;sample
+      &nbsp;sampled_at
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sampled_at" class="md-nav__link">
+  <a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.value" class="md-nav__link">
     <span class="md-ellipsis">
-      &nbsp;sampled_at
+      &nbsp;value
     </span>
   </a>
   
@@ -3158,16 +3158,17 @@ environment.</p>
             Bases: <code><a class="autorefs autorefs-external" title="betterproto.Message" href="https://test-betterproto.readthedocs.io/en/docs/api.html#betterproto.Message">Message</a></code></p>
 
   
-      <p>ComponentData message aggregates multiple metrics, operational states, and
-errors, related to a specific microgrid component. !!! example   Example
-output of a component data message:   <code>{      component_id: 13,
+      <p>SensorData message aggregates multiple metrics, operational states, and
+errors, related to a specific microgrid sensor. !!! example   Example
+output of a component data message:   <code>{      sensor_id: 13,
 metric_samples: [        /* list of metrics for multiple timestamps */
 {          sampled_at: "2023-10-01T00:00:00Z",          metric:
-"METRIC_SENSOR_TEMPERATURE",          sample: metric_sample_type:
-{simple_metric: {value: 23.5},          bounds: {},        },        {
-sampled_at: "2023-10-01T00:00:00Z",          metric:
-"METRIC_SENSOR_RELATIVE_HUMIDITY",          sample: metric_sample_type:
-{simple_metric: {value: 23.5},          bounds: {},        }      ]    }</code></p>
+"METRIC_SENSOR_TEMPERATURE",          value: metric_value_variant:
+{simple_metric: {value: 23.5},        },        {          sampled_at:
+"2023-10-01T00:00:00Z",          metric: "METRIC_SENSOR_RELATIVE_HUMIDITY",
+value: metric_value_variant: {simple_metric: {value: 23.5},        }
+],      states: [        {          sampled_at: "2023-10-01T00:00:00Z",
+states: [],          errors: [],        },      ]    }</code></p>
 
             <details class="quote">
               <summary>Source code in <code>src/frequenz/microgrid/betterproto/frequenz/api/common/v1/microgrid/sensors/__init__.py</code></summary>
@@ -3197,17 +3198,17 @@ sampled_at: "2023-10-01T00:00:00Z",          metric:
 <span class="normal"><a href="#__codelineno-0-170">170</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-147"><a id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span><span id="__span-0-148"><a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="k">class</span> <span class="nc">SensorData</span><span class="p">(</span><span class="n">betterproto</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
 </span><span id="__span-0-149"><a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150"></a><span class="sd">    ComponentData message aggregates multiple metrics, operational states, and</span>
-</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">    errors, related to a specific microgrid component. !!! example   Example</span>
-</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="sd">    output of a component data message:   ```    {      component_id: 13,</span>
+</span><span id="__span-0-150"><a id="__codelineno-0-150" name="__codelineno-0-150"></a><span class="sd">    SensorData message aggregates multiple metrics, operational states, and</span>
+</span><span id="__span-0-151"><a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">    errors, related to a specific microgrid sensor. !!! example   Example</span>
+</span><span id="__span-0-152"><a id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="sd">    output of a component data message:   ```    {      sensor_id: 13,</span>
 </span><span id="__span-0-153"><a id="__codelineno-0-153" name="__codelineno-0-153"></a><span class="sd">    metric_samples: [        /* list of metrics for multiple timestamps */</span>
 </span><span id="__span-0-154"><a id="__codelineno-0-154" name="__codelineno-0-154"></a><span class="sd">    {          sampled_at: &quot;2023-10-01T00:00:00Z&quot;,          metric:</span>
-</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155"></a><span class="sd">    &quot;METRIC_SENSOR_TEMPERATURE&quot;,          sample: metric_sample_type:</span>
-</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156"></a><span class="sd">    {simple_metric: {value: 23.5},          bounds: {},        },        {</span>
-</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157"></a><span class="sd">    sampled_at: &quot;2023-10-01T00:00:00Z&quot;,          metric:</span>
-</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">    &quot;METRIC_SENSOR_RELATIVE_HUMIDITY&quot;,          sample: metric_sample_type:</span>
-</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">    {simple_metric: {value: 23.5},          bounds: {},        }      ]    }</span>
-</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">    ```</span>
+</span><span id="__span-0-155"><a id="__codelineno-0-155" name="__codelineno-0-155"></a><span class="sd">    &quot;METRIC_SENSOR_TEMPERATURE&quot;,          value: metric_value_variant:</span>
+</span><span id="__span-0-156"><a id="__codelineno-0-156" name="__codelineno-0-156"></a><span class="sd">    {simple_metric: {value: 23.5},        },        {          sampled_at:</span>
+</span><span id="__span-0-157"><a id="__codelineno-0-157" name="__codelineno-0-157"></a><span class="sd">    &quot;2023-10-01T00:00:00Z&quot;,          metric: &quot;METRIC_SENSOR_RELATIVE_HUMIDITY&quot;,</span>
+</span><span id="__span-0-158"><a id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="sd">    value: metric_value_variant: {simple_metric: {value: 23.5},        }</span>
+</span><span id="__span-0-159"><a id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="sd">    ],      states: [        {          sampled_at: &quot;2023-10-01T00:00:00Z&quot;,</span>
+</span><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="sd">    states: [],          errors: [],        },      ]    }  ```</span>
 </span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162"></a>
 </span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163"></a>    <span class="n">sensor_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">betterproto</span><span class="o">.</span><span class="n">uint64_field</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -3834,7 +3835,7 @@ vapor. In Celsius (°C).</p>
 </span><span id="__span-0-202"><a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="n">metric</span><span class="p">:</span> <span class="s2">&quot;__metrics__.Metric&quot;</span> <span class="o">=</span> <span class="n">betterproto</span><span class="o">.</span><span class="n">enum_field</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-0-203"><a id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The metric that was sampled.&quot;&quot;&quot;</span>
 </span><span id="__span-0-204"><a id="__codelineno-0-204" name="__codelineno-0-204"></a>
-</span><span id="__span-0-205"><a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">sample</span><span class="p">:</span> <span class="s2">&quot;__metrics__.MetricSampleVariant&quot;</span> <span class="o">=</span> <span class="n">betterproto</span><span class="o">.</span><span class="n">message_field</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-0-205"><a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">value</span><span class="p">:</span> <span class="s2">&quot;__metrics__.MetricValueVariant&quot;</span> <span class="o">=</span> <span class="n">betterproto</span><span class="o">.</span><span class="n">message_field</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span><span id="__span-0-206"><a id="__codelineno-0-206" name="__codelineno-0-206"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The value of the sampled metric.&quot;&quot;&quot;</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -3877,30 +3878,6 @@ vapor. In Celsius (°C).</p>
 
 
 
-<h6 id="frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sample" class="doc doc-heading">
-          <span class="doc doc-object-name doc-attribute-name">sample</span>
-
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
-      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
-  </span>
-
-<a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sample" class="headerlink" title="Permanent link">¤</a></h6>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sample</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="frequenz.microgrid.betterproto.frequenz.api.common.v1.metrics.MetricSampleVariant" href="../../metrics/#frequenz.microgrid.betterproto.frequenz.api.common.v1.metrics.MetricSampleVariant">MetricSampleVariant</a></span> <span class="o">=</span> <span class="n"><span title="betterproto.message_field">message_field</span></span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span></code></pre></div>
-
-  <div class="doc doc-contents ">
-  
-      <p>The value of the sampled metric.</p>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
 <h6 id="frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.sampled_at" class="doc doc-heading">
           <span class="doc doc-object-name doc-attribute-name">sampled_at</span>
 
@@ -3917,6 +3894,30 @@ vapor. In Celsius (°C).</p>
   <div class="doc doc-contents ">
   
       <p>The UTC timestamp of when the metric was sampled.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h6 id="frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.value" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">value</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+<a href="#frequenz.microgrid.betterproto.frequenz.api.common.v1.microgrid.sensors.SensorMetricSample.value" class="headerlink" title="Permanent link">¤</a></h6>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">value</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="frequenz.microgrid.betterproto.frequenz.api.common.v1.metrics.MetricValueVariant" href="../../metrics/#frequenz.microgrid.betterproto.frequenz.api.common.v1.metrics.MetricValueVariant">MetricValueVariant</a></span> <span class="o">=</span> <span class="n"><span title="betterproto.message_field">message_field</span></span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>The value of the sampled metric.</p>
   </div>
 
 </div>
