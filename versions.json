@@ -3,16 +3,16 @@
     "version": "v0.18-dev",
     "title": "v0.18-dev (604d20b)",
     "aliases": [
-      "v0-dev",
-      "latest-dev"
+      "latest-dev",
+      "v0-dev"
     ]
   },
   {
     "version": "v0.17",
     "title": "v0.17.0",
     "aliases": [
-      "v0",
-      "latest"
+      "latest",
+      "v0"
     ]
   },
   {
