@@ -2,4 +2,4 @@
 
 ## Bug Fixes
 
-Fix a packaging issue resulting in the generated files not being included.
+Properly show symbol types in the table of contents of the documentation.
