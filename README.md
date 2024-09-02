@@ -1,3 +1,10 @@
+# Archived
+
+> [!WARNING]
+> This repository has been archived due to doubts casted about [betterproto](https://github.com/danielgtaylor/python-betterproto) being a sustaintable project.
+>
+> Please use [`frequenz-api-microgrid`](https://github.com/frequenz-floss/frequenz-api-microgrid) instead.
+
 # Frequenz Microgrid API Python Bindings
 
 [![Build Status](https://github.com/frequenz-floss/frequenz-microgrid-betterproto-python/actions/workflows/ci.yaml/badge.svg)](https://github.com/frequenz-floss/frequenz-microgrid-betterproto-python/actions/workflows/ci.yaml)
